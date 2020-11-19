@@ -1,0 +1,50 @@
+<! news.html >
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NEWS</title>
+        <style>
+        .header1 {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color:rgb(15, 15, 15);
+            color: white;
+            text-align: center;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="header1">
+            <h1 style="color: white;">DAILY EWS</h1>
+        </div>
+        <div class="ui container" style="margin-top: 50px; background: #D3D3D3;" >
+            <div class='field'>
+                {% for news in news_list %}
+                <div class="ui segment">
+                    <p class="ui big header"><b>{{news.title.text}}</b>></p>
+                    <span>Published On : {{news.pubDate.text}}</span><br><br>
+                    <a class="ui blue button" href="{{news.link.text}}">Read More</a><br><br><br><br><br>
+                </div>
+                {% endfor %}
+                <br><br><br>
+            </div>
+              <div class="footer">
+                <h2>Made by <a href="https://github.com/akashshah03" style="color:white;">Akash Shah</a></h2>
+              </div>
+        </div>
+    </body>
+</html>
